@@ -10,6 +10,17 @@ var flag = false,
 var col = "gray";
 
 
+
+//function save() {
+  //    var canvas  = document.getElementById('drawing');
+      //var context = canvas.getContext('2d');
+  //    document.getElementById("drawing").style.border = "2px solid";
+  //    var dataURL = canvas.toDataURL();
+  //    document.getElementById("drawing").src = dataURL;
+  //    document.getElementById("drawing").style.display = "inline";
+  //}
+
+
   function findxy(res, e) {
       if (res == 'down') {
           prevX = currX;
@@ -61,33 +72,33 @@ var col = "gray";
       }, false);
   }
 
-  function color(obj) {
-      switch (obj.id) {
-          case "green":
-              col = "green";
-              break;
-          case "blue":
-              col = "blue";
-              break;
-          case "red":
-              col = "red";
-              break;
-          case "yellow":
-              col = "yellow";
-              break;
-          case "orange":
-              col = "orange";
-              break;
-          case "black":
-              col = "black";
-              break;
-          case "white":
-              col = "white";
-              break;
-      }
+  // function color(obj) {
+  //     switch (obj.id) {
+  //         case "green":
+  //             col = "green";
+  //             break;
+  //         case "blue":
+  //             col = "blue";
+  //             break;
+  //         case "red":
+  //             col = "red";
+  //             break;
+  //         case "yellow":
+  //             col = "yellow";
+  //             break;
+  //         case "orange":
+  //             col = "orange";
+  //             break;
+  //         case "black":
+  //             col = "black";
+  //             break;
+  //         case "white":
+  //             col = "white";
+  //             break;
+  //     }
    
 
-  }
+  // }
 
   function draw() {
       context.beginPath();
@@ -145,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function() {
      context.clearRect(0, 0, canvas.width, canvas.height);
    });
 
-    socket.on('color', function () {
-     console.log("I am in greeb function")
-     col = "green";
+    socket.on('color', function (data) {
+
+     col = data.col;
    });
 
 
@@ -165,8 +176,34 @@ document.addEventListener("DOMContentLoaded", function() {
         socket.emit('erase', { line: [  ] });
       });
 
-      $( "#green" ).click(function() {
-        socket.emit('color', { col: 'green' });
+      $( ".color_class" ).click(function() {
+       
+
+        switch (this.id) {
+          case "green":
+              socket.emit('color', { col: 'green' });
+              break;
+          case "blue":
+               console.log("blue")
+              socket.emit('color', { col: 'blue' });
+              break;
+          case "red":
+               socket.emit('color', { col: 'red' });
+              break;
+          case "yellow":
+               socket.emit('color', { col: 'yellow' });
+              break;
+          case "orange":
+               socket.emit('color', { col: 'orange' });
+              break;
+          case "black":
+               socket.emit('color', { col: 'black' });
+              break;
+          case "white":
+               socket.emit('color', { col: 'white' });
+              break;
+      }
+   
       });
 
 

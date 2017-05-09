@@ -38,8 +38,7 @@ io.on('connection', function (socket) {
    });
 
    socket.on('color', function (data) {
-      
-      io.emit('color', { col : 'gold' });
+      io.emit('color', { col : data.col });
    });
 
 });

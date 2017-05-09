@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-<meta name="htmlcanvas/config/environment" content="%7B%22modulePrefix%22%3A%22htmlcanvas%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22htmlcanvas%22%2C%22version%22%3A%220.0.0+1c1e7760%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-websockets%22%3A%7B%22socketIO%22%3Afalse%7D%7D" />
+<meta name="htmlcanvas/config/environment" content="%7B%22modulePrefix%22%3A%22htmlcanvas%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22htmlcanvas%22%2C%22version%22%3A%220.0.0+fa19b248%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-websockets%22%3A%7B%22socketIO%22%3Afalse%7D%7D" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/vendor-969213113bf8ce8653053cf775905b0d.css" integrity="sha256-5TkWZwOs25hrG91gTZk3XPjJe8d4yhWtIFcK4p/Pm0s= sha512-HvxN2lh5wRYcHURug/yfoHGetnRqL4oUt4ZCZCuirm4hxOjJIr3ezBvSyPGYRNFGkpXxF6O0QrQhKZJHAC6aaA==" >
     <link rel="stylesheet" href="/assets/htmlcanvas-f30d0c4186d0657706539550e6cfcaaa.css" integrity="sha256-MBKi+8bv+vfKp77iANkpTX020vop1GEbncgMdVk9ODk= sha512-xhHAnX1kqGlSw3H9l0tYaYjhqUukRWjdANmwljUYx7rwpotwZ+saHW2qUbqwCaKM4YkCXW5ezGCv/04QgkPKdA==" >
@@ -20,16 +20,15 @@
 
   
      <div id="left">
-       <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
-    <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" ></div>
-    <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
-    <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
-    <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
-    <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
-    <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
-    
-    <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
-
+        <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
+    <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" class="color_class"></div>
+    <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" class="color_class"></div>
+    <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" class="color_class"></div>
+    <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" class="color_class"></div>
+    <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" class="color_class"></div>
+    <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" class="color_class"></div>
+    <div style="position:absolute;top:20%;left:43%;">Eraser</div>
+    <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" ></div>
     <input type="button" value="clear" id="clr" size="23" style="position:absolute;top:55%;left:15%;">
 
 
@@ -52,8 +51,8 @@
       </form>
     </section>
 </div>
-    <script src="/assets/vendor-93cb9f55aa3daae70c13b311018e0955.js" integrity="sha256-QKJwIml3+1lxmSxqMiboOWcXgkZH0ciZZi3GuIieOQs= sha512-/ZjAgEmDhu61ridUd1YouDfqS75/xyEjgkZ+q6E+hp8aV1Ipa/PLmq9Y9ujEW90knQ2KAuP/Aq9VAQaPA2yYKw==" ></script>
-    <script src="/assets/htmlcanvas-0fd7ea0a6bff6eadb8f514de5d54d584.js" integrity="sha256-SWV1T6opQZoZOR11HwJPRgP69PAwCWoTg6/OxEYO6XQ= sha512-cAnGYpMDoGS4ex6pEZsOtiZxvljb3ncCobO/0scyT+LvEzc8mzM0tx8GvFJ0ngiMrtBB/3Wz0RCFeK6d9GopYg==" ></script>
+    <script src="/assets/vendor-fc28657346cfb442f02ef0fa6e969a76.js" integrity="sha256-YC8zE7/umkss7Rogj5PHn6pK6W/fIZ6JdaiuzxoiZ4Q= sha512-DFIqBLe23WcCy7RVhqRsOu9k8azsEmCqmO3A04M0ilIka6tv6RKgXK7Ks0Q+TORKli40ddZEytq1B6LCbfIwAw==" ></script>
+    <script src="/assets/htmlcanvas-f909094bcee53b85534e0617eef0cc99.js" integrity="sha256-Ow9EQHUB1CMU5k1MzPT4jRCJWMMKykwqUx74cHQtjV4= sha512-Rosq66G4qKm+R1L4BEPpl0R2Ch7e6Yk1fRMjMBTijtC0BMA9W9yCGYMl20cmDZZuI7hAWReMcu2wq0wHmIYKtA==" ></script>
     <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 
 
