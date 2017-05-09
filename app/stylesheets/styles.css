@@ -1,24 +1,10 @@
 html, body {
-   height: 100%;
-   margin: 0;
-}
-div {
-   height: 100%;
-   float: left;
-}
-#left {
-   width:220px;
-   margin: 5px;
-}
-#center {
-   margin: 5px 0;
-   width: calc(100% - 460px);
-}
-#right {
-   margin: 5px;
-   width: 220px;
+  height: 100%;
 }
 
+body {
+  padding-bottom: 10px
+}
 
 .chat-wrapper {
   display: flex;

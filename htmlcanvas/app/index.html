@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{content-for "head"}}
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="{{rootURL}}assets/htmlcanvas.css">
 
@@ -17,13 +17,46 @@
   <body>
     {{content-for "body"}}
 
-     <canvas id="drawing"></canvas>
-     <p>Hi I am here..</p>
+  
+     <div id="left">
+       <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
+    <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" ></div>
+    <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
+    <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
+    <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
+    <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
+    <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
+    
+    <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+
+    <input type="button" value="clear" id="clr" size="23" style="position:absolute;top:55%;left:15%;">
+
+
+     </div>
+<div id="center"> <canvas id="drawing"></canvas></div>
+<div id="right">
+  <div class="panel panel-default chat-messages">
+        <ul class="panel-body chat-message-list" data-chat="message-list"></ul>
+    </div>
+
+    <section class="chat-input">
+      <form data-chat="chat-form" class="cb-container">
+        <div class="input-group">
+          <label for="js-message-input" class="sr-only">Message:</label>
+          <input type="text" class="form-control" data-chat="message-input" autofocus>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+    </section>
+</div>
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/htmlcanvas.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+
 
     {{content-for "body-footer"}}
   </body>
 </html>
 {{rootURL}}
-<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>

@@ -8,23 +8,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     
-<meta name="htmlcanvas/config/environment" content="%7B%22modulePrefix%22%3A%22htmlcanvas%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22htmlcanvas%22%2C%22version%22%3A%220.0.0+764dbbef%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-websockets%22%3A%7B%22socketIO%22%3Afalse%7D%7D" />
-
-    <link rel="stylesheet" href="/assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU= sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" >
-    <link rel="stylesheet" href="/assets/htmlcanvas-dfdbe144f4482d4353d2ef2d0b3752c3.css" integrity="sha256-KLRt5cnQQgM2XOenPcHnBKXCYpgO4LInFAojs71Fd4g= sha512-XpXgLImtClpqg79eX63G1EgouZSq1uyBfmzwwPQHVrlq3ELLxGbqhnUjA/yZeDOA2UrNbQ8ZbDbbA5v1pfuEVg==" >
+<meta name="htmlcanvas/config/environment" content="%7B%22modulePrefix%22%3A%22htmlcanvas%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22htmlcanvas%22%2C%22version%22%3A%220.0.0+1c1e7760%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-websockets%22%3A%7B%22socketIO%22%3Afalse%7D%7D" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vendor-969213113bf8ce8653053cf775905b0d.css" integrity="sha256-5TkWZwOs25hrG91gTZk3XPjJe8d4yhWtIFcK4p/Pm0s= sha512-HvxN2lh5wRYcHURug/yfoHGetnRqL4oUt4ZCZCuirm4hxOjJIr3ezBvSyPGYRNFGkpXxF6O0QrQhKZJHAC6aaA==" >
+    <link rel="stylesheet" href="/assets/htmlcanvas-f30d0c4186d0657706539550e6cfcaaa.css" integrity="sha256-MBKi+8bv+vfKp77iANkpTX020vop1GEbncgMdVk9ODk= sha512-xhHAnX1kqGlSw3H9l0tYaYjhqUukRWjdANmwljUYx7rwpotwZ+saHW2qUbqwCaKM4YkCXW5ezGCv/04QgkPKdA==" >
 
     
   </head>
   <body>
     
 
-     <canvas id="drawing"></canvas>
-     <p>Hi I am here..</p>
-    <script src="/assets/vendor-7eab9f89c599deae4995f3fd6a946396.js" integrity="sha256-fyvkCJxvsLJl4iYShta8ctndnixxeRniDYjSWLQd4/8= sha512-TKTWD/SGKkUmCxwwQnuDqO/hzWOEC0p0Mq88E2As0rpSsLWNzuRo29I/Wn2cHeOLX3gM+IKgnXgP66Pc4/23bA==" ></script>
-    <script src="/assets/htmlcanvas-8a4e607d87b0853cd8c92f2324bd786f.js" integrity="sha256-wBqYbgSnNUpr8mAdoU0aX7ARJCX2H7tpoaa6dthhRmo= sha512-mPKj8GVEqpT5c9zhfxRhMR45zAgqDqWfczG0t/UPPQ1aMr9YXq9tUHA4YdEqsGQkq1X5xENthPomI7O8tjGpMg==" ></script>
-
+  
+     <div id="left">
+       <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
+    <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" ></div>
+    <div style="position:absolute;top:15%;left:46%;width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
+    <div style="position:absolute;top:15%;left:47%;width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
+    <div style="position:absolute;top:17%;left:45%;width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
+    <div style="position:absolute;top:17%;left:46%;width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
+    <div style="position:absolute;top:17%;left:47%;width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
     
+    <div style="position:absolute;top:22%;left:45%;width:15px;height:15px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+
+    <input type="button" value="clear" id="clr" size="23" style="position:absolute;top:55%;left:15%;">
+
+
+     </div>
+<div id="center"> <canvas id="drawing"></canvas></div>
+<div id="right">
+  <div class="panel panel-default chat-messages">
+        <ul class="panel-body chat-message-list" data-chat="message-list"></ul>
+    </div>
+
+    <section class="chat-input">
+      <form data-chat="chat-form" class="cb-container">
+        <div class="input-group">
+          <label for="js-message-input" class="sr-only">Message:</label>
+          <input type="text" class="form-control" data-chat="message-input" autofocus>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+    </section>
+</div>
+    <script src="/assets/vendor-93cb9f55aa3daae70c13b311018e0955.js" integrity="sha256-QKJwIml3+1lxmSxqMiboOWcXgkZH0ciZZi3GuIieOQs= sha512-/ZjAgEmDhu61ridUd1YouDfqS75/xyEjgkZ+q6E+hp8aV1Ipa/PLmq9Y9ujEW90knQ2KAuP/Aq9VAQaPA2yYKw==" ></script>
+    <script src="/assets/htmlcanvas-0fd7ea0a6bff6eadb8f514de5d54d584.js" integrity="sha256-SWV1T6opQZoZOR11HwJPRgP69PAwCWoTg6/OxEYO6XQ= sha512-cAnGYpMDoGS4ex6pEZsOtiZxvljb3ncCobO/0scyT+LvEzc8mzM0tx8GvFJ0ngiMrtBB/3Wz0RCFeK6d9GopYg==" ></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+
+
+    <div id="ember-bootstrap-wormhole"></div>
   </body>
 </html>
 /
-<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
